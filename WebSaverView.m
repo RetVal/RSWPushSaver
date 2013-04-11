@@ -33,10 +33,10 @@
     if (self)
     {
     	ScreenSaverDefaults *defaults = [ScreenSaverDefaults defaultsForModuleWithName:@"com.retval.RSWPushSaver"];
-        [defaults registerDefaults:@{@"url0": @"http://www.weibo.com",
-                                     @"url1": @"http://www.renren.com",
+        [defaults registerDefaults:@{@"url0": @"http://www.pingwest.com",
+                                     @"url1": @"http://www.weibo.com",
                                      @"url2": @"http://www.baidu.com",
-                                     @"url3": @"http://www.apple.com",
+                                     @"url3": @"http://3g.163.com/touch/",
                                      @"refresh":[NSNumber numberWithInt:0],
                                      @"userAgent":[NSNumber numberWithInt:0]}];
         url[0] = [defaults valueForKey: @"url0"];
