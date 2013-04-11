@@ -7,7 +7,7 @@
 //
 
 #import "RSWebView.h"
-
+#import "WebSaverView.h"
 @implementation RSWebView
 
 - (id)initWithFrame:(NSRect)frame
@@ -18,6 +18,13 @@
     }
     
     return self;
+}
+
+- (WebFrame *)mainFrame
+{
+    WebSaverView *superView = (WebSaverView *)[self superview];
+    [self setCustomUserAgent: [superView userAgent]];
+    return [super mainFrame];
 }
 
 - (void)drawRect:(NSRect)dirtyRect
@@ -49,5 +56,26 @@
 - (void)keyUp:(NSEvent *)theEvent
 {
     [super keyUp:theEvent];
+}
+- (void)touchesBeganWithEvent:(NSEvent *)event
+{
+    [super touchesBeganWithEvent:event];
+}
+- (void)touchesMovedWithEvent:(NSEvent *)event
+{
+    [super touchesMovedWithEvent:event];
+}
+- (void)touchesEndedWithEvent:(NSEvent *)event
+{
+    [super touchesEndedWithEvent:event];
+}
+- (void)touchesCancelledWithEvent:(NSEvent *)event
+{
+    [super touchesCancelledWithEvent:event];
+}
+
+- (void)scrollWheel:(NSEvent *)theEvent
+{
+    [super scrollWheel:theEvent];
 }
 @end

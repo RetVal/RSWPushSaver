@@ -12,15 +12,20 @@
 @interface WebSaverView : ScreenSaverView 
 {
     IBOutlet id configSheet;
-    IBOutlet NSTextField *urlField;
+    IBOutlet NSTextField *urlField0;
+    IBOutlet NSTextField *urlField1;
+    IBOutlet NSTextField *urlField2;
+    IBOutlet NSTextField *urlField3;
     IBOutlet NSSlider *refreshSlider;
     IBOutlet NSTextField *refreshLabel;
 
-    NSString *url;
+    IBOutlet NSButton *userAgentCheckBtn;
+    NSString *url[4];
     int refresh;
-    RSWebView *webview;
+    NSNumber *WSVUserAgent;
+    RSWebView *webview[4];
 }
-
+- (NSString *)userAgent;
 - (IBAction) changedRefresh:(id) sender;
 - (IBAction) closeSheetSave:(id) sender;
 - (IBAction) closeSheetCancel:(id) sender;
